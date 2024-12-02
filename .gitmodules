@@ -1,3 +1,4 @@
 [submodule "adventofcode/resources"]
 	path = adventofcode/resources
 	url = https://github.com/jpitcairn/AdventOfCode-data.git
+	branch = main
