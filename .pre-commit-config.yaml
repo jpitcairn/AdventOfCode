@@ -15,3 +15,17 @@ repos:
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: check-submodule-changes
+        name: Check Submodule Changes
+        entry: |
+          bash -c '
+          if [ -n "$(git -C adventofcode/resources status --porcelain)" ]; then
+            echo "Error: Submodule has uncommitted changes. Commit those changes first.";
+            exit 1;
+          fi
+          '
+        language: system
+        pass_filenames: false
